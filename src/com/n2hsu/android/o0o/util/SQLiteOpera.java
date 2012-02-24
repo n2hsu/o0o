@@ -18,31 +18,25 @@ public class SQLiteOpera extends SQLiteOpenHelper {
 	}
 
 	@Override
-	public synchronized SQLiteDatabase getReadableDatabase() {
-		return super.getReadableDatabase();
-	}
-
-	@Override
-	public synchronized SQLiteDatabase getWritableDatabase() {
-		return super.getWritableDatabase();
-	}
-
-	@Override
 	public void onCreate(SQLiteDatabase db) {
 
-		db.execSQL("CREATE TABLE [channel] (" +
-				"[idchannel] INTEGER DEFAULT '''0''' PRIMARY KEY AUTOINCREMENT NOT NULL," +
-				"[imageurl] VARCHAR(200)  NULL," +
-				"[imagelocal] VARCHAR(200)  NOT NULL," +
-				"[description] VARCHAR(150)  NULL," +
-				"[link] vaRCHAR(50) DEFAULT 'null' NOT NULL," +
-				"[language] VARCHAR(10) DEFAULT 'en' NULL," +
-				"[ttl] vaRCHAR(10) DEFAULT 'null' NULL," +
-				"[generator] VARCHAR(20) DEFAULT 'null' NULL," +
-				"[copyright] VARCHAR(50)  NULL," +
-				"[pubdate] VARCHAR(100)  NULL," +
-				"[webmaster] VARCHAR(30)  NULL," +
-				"[lastbuilddate] VARCHAR(30)  NULL)");
+		db.execSQL("CREATE TABLE ["
+				+ Tool.T_TABLE
+				+ "] ("
+				+ "[idchannel] INTEGER DEFAULT '''0''' PRIMARY KEY AUTOINCREMENT NOT NULL,"
+				+ "[title] VARCHAR(50)  NOT NULL,"
+				+ "[imageurl] VARCHAR(200)  NULL,"
+				+ "[imagelocal] VARCHAR(200)  NOT NULL,"
+				+ "[description] VARCHAR(150)  NULL,"
+				+ "[link] vaRCHAR(50) DEFAULT 'null' NOT NULL,"
+				+ "[language] VARCHAR(10) DEFAULT 'en' NULL,"
+				+ "[ttl] vaRCHAR(10) DEFAULT 'null' NULL,"
+				+ "[generator] VARCHAR(20) DEFAULT 'null' NULL,"
+				+ "[copyright] VARCHAR(50)  NULL,"
+				+ "[pubdate] VARCHAR(100)  NULL,"
+				+ "[webmaster] VARCHAR(30)  NULL,"
+				+ "[lastbuilddate] VARCHAR(30)  NULL,"
+				+ "[xmlurl] VARCHAR(50)  NOT NULL)");
 	}
 
 	@Override
