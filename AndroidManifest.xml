@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity 
+            android:name="ChannelsList">
+            
+        </activity>
         <activity
             android:name=".Item_LR122">
         </activity>
